@@ -12,7 +12,7 @@ const Home = () => {
     return (
         <Container>
             <Box sx={{ textAlign: "center" }}>
-                <Box mt={4} mb={4} pt={3} pb={3} style={{ backgroundColor: "#bbdefb", borderRadius: "20px" }}>
+                <Box mt={6} mb={4} pt={3} pb={3} style={{ backgroundColor: "#e3f2fd", borderRadius: "20px" }}>
                     <Box justifyContent="center" mb={2}>
                         <Box sx={{ fontSize: 'h4.fontSize', fontWeight: 'regular' }}>
                             Multilingual Text Analyzer and Summarization Engine
