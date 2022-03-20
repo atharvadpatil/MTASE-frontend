@@ -7,6 +7,7 @@ import Home from './components/home';
 import Summarize from './components/summarize';
 import Test from './components/test';
 import Approach from './components/approach';
+import Results from './components/results';
 
 // MUI
 import { blue } from '@mui/material/colors';
@@ -30,6 +31,7 @@ function App() {
 
                 <Route path="/summarize" element={<Summarize />} exact />
                 <Route path="/approach" element={<Approach />} exact />
+                <Route path="/results" element={<Results />} exact />
                 <Route path="/test" element={<Test />} exact />
 
                 <Route path="*" element={<NotFound />} />
