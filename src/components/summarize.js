@@ -106,7 +106,7 @@ const Summarize = () => {
                                 value={file}
                                 onChange={setFile}
                                 buttonText="Upload .txt file"
-                                title="Drad 'n' Drop or select a text file"
+                                title="Drag 'n' Drop or select a text file"
                                 sx={fileError ? { borderColor: "red" } : ""}
                             />
                         </ThemeProvider>
