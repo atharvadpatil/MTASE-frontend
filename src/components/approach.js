@@ -1,15 +1,236 @@
 import React from 'react';
 
+//Image
+import modelDiagram from '../images/model_diagram.png'
+
+
 // MUI
-import { Box } from '@mui/material';
-
-
+import { Box, Container, Typography } from "@mui/material";
+import List from '@mui/material/List';
+import ListItem from '@mui/material/ListItem';
+import ListItemIcon from '@mui/material/ListItemIcon';
+import ListItemText from '@mui/material/ListItemText';
+import ArrowRightIcon from '@mui/icons-material/ArrowRight';
 const Approach = () => {
     return (
         <>
-            <Box>
-                Approach
-            </Box>
+            <Container>
+                <Box sx={{ textAlign: "left" }}>
+                    <Box mt={6} mb={4} pt={3} pb={3} pl={4} pr={4} style={{ backgroundColor: "#e3f2fd", borderRadius: "20px" }}>
+                        <Box justifyContent="flex-start" mb={2}>
+                            <Box sx={{ fontSize: 'h4.fontSize', fontWeight: 'regular' }}>
+                                Multilingual Text Analyzer and Summarization Engine
+                            </Box>
+                        </Box>
+                        <Box mt={2}>
+                            <Typography variant='body1'>
+                                Multilingual Text Analyzer and Summarization Engine can analyze, translate and summarize a piece of unlabeled/unidentified/unknown text provided by the user. The app provides the following features:
+                            </Typography>
+                            <List>
+                                <ListItem disablePadding>
+                                    <ListItemIcon>
+                                        <ArrowRightIcon />
+                                    </ListItemIcon>
+                                    <ListItemText primary="Language Identification" />
+                                </ListItem>
+                                <ListItem disablePadding>
+                                    <ListItemIcon>
+                                        <ArrowRightIcon />
+                                    </ListItemIcon>
+                                    <ListItemText primary="Language Translation [any language(x) to English]" />
+                                </ListItem>
+                                <ListItem disablePadding>
+                                    <ListItemIcon>
+                                        <ArrowRightIcon />
+                                    </ListItemIcon>
+                                    <ListItemText primary="Keyword Extraction" />
+                                </ListItem>
+                                <ListItem disablePadding>
+                                    <ListItemIcon>
+                                        <ArrowRightIcon />
+                                    </ListItemIcon>
+                                    <ListItemText primary="Abstractive Text Summarization (To get the Headline/Title)" />
+                                </ListItem>
+                                <ListItem disablePadding>
+                                    <ListItemIcon>
+                                        <ArrowRightIcon />
+                                    </ListItemIcon>
+                                    <ListItemText primary="Extractive Text Summarization" />
+                                </ListItem>
+                            </List>
+                        </Box>
+                        <Box mt={2} >
+                            <Box>
+                                <Typography variant='h5'>
+                                    Model Diagram depicting text processing
+                                </Typography>
+                            </Box>
+                            <Box pt={2} >
+                                <img src={modelDiagram} alt="banner" style={{ height: '50%', width: '100%'}} />
+                            </Box>
+                        </Box>
+                        <Box mt={2}>
+                            <Box>
+                                <Typography variant='h5'>
+                                    Text Summarization
+                                </Typography>
+                                <Typography variant='body1'>
+                                    In short, Text Summarization is the process of creating a short, coherent, and fluent summary of a longer text document and involves the outlining of the text’s major points. There are 2 main approaches for text summarization:
+                                </Typography>
+                            </Box>
+                            <Box pt={4}>
+                                <Typography variant='h6'>
+                                    1. Extractive Summarization:
+                                </Typography>
+                                <Typography variant='body1'>
+                                    Extractive methods attempt to summarize articles by identifying the important sentences or phrases from the original text and stitch together portions of the content to produce a condensed version. These extracted sentences are then used to form the summary. The big advantage of these types of models is that they are generally easier to create and the resulting summaries tend to faithfully reflect the facts included in the source
+                                </Typography>
+                            </Box>
+                            <Box mt={3}>
+                                <Typography variant='body1'>
+                                    Methods used:
+                                </Typography>
+                                <List>
+                                    <ListItem disablePadding>
+                                        <ListItemIcon>
+                                            <ArrowRightIcon />
+                                        </ListItemIcon>
+                                        <ListItemText primary="Text Rank: In Text Rank, sentence term matrix is used to cosine similarity between sentences. The similarity matrix is used to construct a graph, where sentences are nodes. Text rank algorithm is run on the graph. This method is similar to Page Rank algorithm used for ranking web pages in online search results" />
+                                    </ListItem>
+                                    <ListItem disablePadding>
+                                        <ListItemIcon>
+                                            <ArrowRightIcon />
+                                        </ListItemIcon>
+                                        <ListItemText primary="Term Frequency: In Term Frequency, frequencies of terms appearing in a sentence are added up to calculate score. A regularization is done based on sentence length." />
+                                    </ListItem>
+                                </List>
+                            </Box>
+                            <Box mt={3}>
+                                <Typography variant='body1'>
+                                    Approach:
+                                </Typography>
+                                <List>
+                                    <ListItem disablePadding>
+                                        <ListItemIcon>
+                                            <ArrowRightIcon />
+                                        </ListItemIcon>
+                                        <ListItemText primary="Split document into sentences" />
+                                    </ListItem>
+                                    <ListItem disablePadding>
+                                        <ListItemIcon>
+                                            <ArrowRightIcon />
+                                        </ListItemIcon>
+                                        <ListItemText primary="Preprocess each sentence including tokenization, stop word removal and lemmatization" />
+                                    </ListItem>
+                                    <ListItem disablePadding>
+                                        <ListItemIcon>
+                                            <ArrowRightIcon />
+                                        </ListItemIcon>
+                                        <ListItemText primary="Assign algorithmic specific score to each sentence" />
+                                    </ListItem>
+                                    <ListItem disablePadding>
+                                        <ListItemIcon>
+                                            <ArrowRightIcon />
+                                        </ListItemIcon>
+                                        <ListItemText primary="Sort the sentences by descending order of the score and retain top n, where n is a configurable parameter" />
+                                    </ListItem>
+                                    <ListItem disablePadding>
+                                        <ListItemIcon>
+                                            <ArrowRightIcon />
+                                        </ListItemIcon>
+                                        <ListItemText primary="Sort the sentences from the last step in the same order as they appear in the original document" />
+                                    </ListItem>
+                                </List>
+                            </Box>
+                            <Box pt={4}>
+                                <Typography variant='h6'>
+                                    2. Abstractive Summarization:
+                                </Typography>
+                                <Typography variant='body1'>
+                                    Abstractive Summarization relies on being able to paraphrase and shorten parts of a document. Abstractive algorithms can generate new phrases and sentences to capture the meaning of the source document. This resembles the human way more closely. Humans tend to do a lot of paraphrasing, using different words and forming sentences less rigidly following the original ones. When done correctly, it can filter out grammatical inconsistencies relatively prevalent in extractive summarization.
+                                </Typography>
+                            </Box>
+                            <Box mt={3}>
+                                <Typography variant='body1'>
+                                    Methods used:
+                                </Typography>
+                                <List>
+                                    <ListItem disablePadding>
+                                        <ListItemIcon>
+                                            <ArrowRightIcon />
+                                        </ListItemIcon>
+                                        <ListItemText primary="seq2seq (with attention mechanism): Sequence to Sequence architecture can be used for any problems involving sequential information (like Sentiment classification, Neural Machine Translation, and Named Entity Recognition). For text summarization we will model a many-to-many seq2seq problem. It mainly consists of encoder - decoder architecture, where input is a long sequence of words and the output will be a short version of the input sequence. The basic idea of the attention mechanism used with it is how much attention do we need to pay to every word in the input sequence for generating a word at timestep." />
+                                    </ListItem>
+                                    <ListItem disablePadding>
+                                        <ListItemIcon>
+                                            <ArrowRightIcon />
+                                        </ListItemIcon>
+                                        <ListItemText primary="Pointer Gen Model: The pointer-generator network is the extension of the above model, as it allows both copying words via pointing, and generating words from a fixed vocabulary. For each decoder timestep, a generation probability is calculated, which weights the probability of generating words from the vocabulary, versus copying words from the source text. The vocabulary distribution and the attention distribution are weighted and summed to obtain the final distribution, from which we make our prediction." />
+                                    </ListItem>
+                                </List>
+                            </Box>
+                            <Box mt={4}>
+                                <Typography variant='h5'>
+                                    Technologies Used:
+                                </Typography>
+                            </Box>
+                            <Box mt={2} ml={3}>
+                                <Box >
+                                    <Typography variant='body1'>
+                                        Frontend:
+                                    </Typography>
+                                    <List>
+                                        <ListItem disablePadding>
+                                            <ListItemIcon>
+                                                <ArrowRightIcon />
+                                            </ListItemIcon>
+                                            <ListItemText primary="React" />
+                                        </ListItem>
+                                        <ListItem disablePadding>
+                                            <ListItemIcon>
+                                                <ArrowRightIcon />
+                                            </ListItemIcon>
+                                            <ListItemText primary="Material UI" />
+                                        </ListItem>
+                                    </List>
+                                </Box>
+                                <Box mt={2}>
+                                    <Typography variant='body1'>
+                                        Backend:
+                                    </Typography>
+                                    <List>
+                                        <ListItem disablePadding>
+                                            <ListItemIcon>
+                                                <ArrowRightIcon />
+                                            </ListItemIcon>
+                                            <ListItemText primary="Django REST Framework" />
+                                        </ListItem>
+                                        <ListItem disablePadding>
+                                            <ListItemIcon>
+                                                <ArrowRightIcon />
+                                            </ListItemIcon>
+                                            <ListItemText primary="SQL" />
+                                        </ListItem>
+                                    </List>
+                                </Box>
+                                <Box mt={2}>
+                                    <Typography variant='body1'>
+                                        Deep Learning (NLP):
+                                    </Typography>
+                                    <List>
+                                        <ListItem disablePadding>
+                                            <ListItemIcon>
+                                                <ArrowRightIcon />
+                                            </ListItemIcon>
+                                            <ListItemText primary="TensorFlow/ PyTorch" />
+                                        </ListItem>
+                                    </List>
+                                </Box>
+                            </Box>
+                        </Box>
+                    </Box>
+                </Box>
+            </Container>
         </>
     );
 }
