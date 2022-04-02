@@ -1,8 +1,12 @@
 import React from 'react';
 
 //Image
-import modelDiagram from '../images/model_diagram.png'
-
+import modelDiagram from '../images/model_diagram.png';
+import reactSvg from '../images/react.svg';
+import djangoSvg from '../images/django.svg';
+import muiSvg from '../images/material-ui.svg';
+import sqlSvg from '../images/sql.svg';
+import tfSvg from '../images/tensorflow.svg';
 
 // MUI
 import { Box, Container, Typography } from "@mui/material";
@@ -31,31 +35,31 @@ const Approach = () => {
                                     <ListItemIcon>
                                         <ArrowRightIcon />
                                     </ListItemIcon>
-                                    <ListItemText primary="Language Identification" />
+                                    <ListItemText primary="Language Identification" secondary="Identify the language of text provided by the user" />
                                 </ListItem>
                                 <ListItem disablePadding>
                                     <ListItemIcon>
                                         <ArrowRightIcon />
                                     </ListItemIcon>
-                                    <ListItemText primary="Language Translation [any language(x) to English]" />
+                                    <ListItemText primary="Language Translation [any language(x) to English]" secondary="If the input text is not in English the app will translate it into English for further processing" />
                                 </ListItem>
                                 <ListItem disablePadding>
                                     <ListItemIcon>
                                         <ArrowRightIcon />
                                     </ListItemIcon>
-                                    <ListItemText primary="Keyword Extraction" />
+                                    <ListItemText primary="Keyword Extraction" secondary="Extract the most important keywords that define the text provided" />
                                 </ListItem>
                                 <ListItem disablePadding>
                                     <ListItemIcon>
                                         <ArrowRightIcon />
                                     </ListItemIcon>
-                                    <ListItemText primary="Abstractive Text Summarization (To get the Headline/Title)" />
+                                    <ListItemText primary="Abstractive Text Summarization (To get the Headline/Title)" secondary="Give a 1-2 liner defining the meaning of the text provided" />
                                 </ListItem>
                                 <ListItem disablePadding>
                                     <ListItemIcon>
                                         <ArrowRightIcon />
                                     </ListItemIcon>
-                                    <ListItemText primary="Extractive Text Summarization" />
+                                    <ListItemText primary="Extractive Text Summarization" secondary="Give a short summary of the text provided" />
                                 </ListItem>
                             </List>
                         </Box>
@@ -221,8 +225,9 @@ const Approach = () => {
                                         <ListItem disablePadding>
                                             <ListItemIcon>
                                                 <ArrowRightIcon />
+                                                
                                             </ListItemIcon>
-                                            <ListItemText primary="TensorFlow/ PyTorch" />
+                                            <ListItemText primary="TensorFlow"/>
                                         </ListItem>
                                     </List>
                                 </Box>
