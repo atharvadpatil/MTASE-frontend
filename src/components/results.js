@@ -80,16 +80,26 @@ const Results = () => {
                     </Paper>
                 </Box>
             </Paper>
+
             <Box sx={{ display: "flex", flexDirection: "row" }}>
-                <Box mr={2} pt={3} pb={3} sx={{ textAlign: "center" }} style={{ width: "50%" }} 
-                >
-                    <Paper style={{ backgroundColor: "#e3f2fd", maxHeight: 300, overflow: "auto" }}>
-                        <Typography pt={1} variant="h6" color="primary">Original Text</Typography>
-                        <Typography px={2} py={2} sx={{ textAlign: "left" }}>
-                            {result.text.text}
-                        </Typography>
-                    </Paper>
-                </Box>
+                {result.text.translated_text ?
+                    <Box mr={2} pt={3} pb={3} sx={{ textAlign: "center" }} style={{ width: "50%" }} >
+                        <Paper style={{ backgroundColor: "#e3f2fd", maxHeight: 300, overflow: "auto" }}>
+                            <Typography pt={1} variant="h6" color="primary">Original Text</Typography>
+                            <Typography px={2} py={2} sx={{ textAlign: "left" }}>
+                                {result.text.text}
+                            </Typography>
+                        </Paper>
+                    </Box>
+                    :
+                    <Box pt={3} pb={3} sx={{ textAlign: "center" }} style={{ width: "100%" }} >
+                        <Paper style={{ backgroundColor: "#e3f2fd", maxHeight: 300, overflow: "auto" }}>
+                            <Typography pt={1} variant="h6" color="primary">Original Text</Typography>
+                            <Typography px={2} py={2} sx={{ textAlign: "left" }}>
+                                {result.text.text}
+                            </Typography>
+                        </Paper>
+                    </Box>}
 
                 {result.text.translated_text ?
                     <Box ml={2} pt={3} pb={3} sx={{ textAlign: "center" }} style={{ width: "50%" }}>
@@ -109,9 +119,11 @@ const Results = () => {
                     <Typography px={2} sx={{ textAlign: "left" }}>
                         Original Text Length: {result.len.text_len}
                     </Typography>
-                    <Typography px={2} sx={{ textAlign: "left" }}>
-                        Translated Text Length: {result.len.translated_text_len}
-                    </Typography>
+                    {result.text.translated_text ?
+                        <Typography px={2} sx={{ textAlign: "left" }}>
+                            Translated Text Length: {result.len.translated_text_len}
+                        </Typography>
+                        : null}
                     <Typography px={2} sx={{ textAlign: "left" }}>
                         Abstractive Summary Length: *
                     </Typography>
