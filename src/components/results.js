@@ -92,7 +92,7 @@ const Results = () => {
                         </Paper>
                     </Box>
                     :
-                    <Box mr={2} pt={3} pb={3} sx={{ textAlign: "center" }} style={{ width: "100%" }} >
+                    <Box pt={3} pb={3} sx={{ textAlign: "center" }} style={{ width: "100%" }} >
                         <Paper style={{ backgroundColor: "#e3f2fd", maxHeight: 300, overflow: "auto" }}>
                             <Typography pt={1} variant="h6" color="primary">Original Text</Typography>
                             <Typography px={2} py={2} sx={{ textAlign: "left" }}>
