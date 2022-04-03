@@ -39,7 +39,7 @@ const Results = () => {
                                 <Tab label="Detailed Summary" value="2" />
                             </TabList>
                         </Box>
-                        <TabPanel value="1">*Abstractive summary*</TabPanel>
+                        <TabPanel value="1">{result.text.abstractive_summary}</TabPanel>
                         <TabPanel value="2">{result.text.extractive_summary}</TabPanel>
                     </TabContext>
                 </Paper>
@@ -119,7 +119,7 @@ const Results = () => {
                         </Typography>
                         : null}
                     <Typography px={2} sx={{ textAlign: "left" }}>
-                        Abstractive Summary Length: *
+                        Abstractive Summary Length: {result.len.abstractive_summary_len}
                     </Typography>
                     <Typography px={2} pb={2} sx={{ textAlign: "left" }}>
                         Extractive Summary Length: {result.len.extractive_summary_len}
