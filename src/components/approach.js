@@ -188,12 +188,14 @@ const Approach = () => {
                                             <ListItemIcon>
                                                 <ArrowRightIcon />
                                             </ListItemIcon>
+                                            <img src={reactSvg} alt="react-logo" style={{ height: 55, width: 55 }}/> &nbsp;
                                             <ListItemText primary="React" />
                                         </ListItem>
                                         <ListItem disablePadding>
                                             <ListItemIcon>
                                                 <ArrowRightIcon />
                                             </ListItemIcon>
+                                            <img src={muiSvg} alt="MUI-logo" /> &nbsp;&nbsp;
                                             <ListItemText primary="Material UI" />
                                         </ListItem>
                                     </List>
@@ -207,12 +209,14 @@ const Approach = () => {
                                             <ListItemIcon>
                                                 <ArrowRightIcon />
                                             </ListItemIcon>
+                                            <img src={djangoSvg} alt="Django-logo" style={{ height: 50, width: 55 }}/>
                                             <ListItemText primary="Django REST Framework" />
                                         </ListItem>
                                         <ListItem disablePadding>
                                             <ListItemIcon>
                                                 <ArrowRightIcon />
                                             </ListItemIcon>
+                                            <img src={sqlSvg} alt="SQL-logo" style={{ height: 50, width: 55 }}/>
                                             <ListItemText primary="SQL" />
                                         </ListItem>
                                     </List>
@@ -225,8 +229,8 @@ const Approach = () => {
                                         <ListItem disablePadding>
                                             <ListItemIcon>
                                                 <ArrowRightIcon />
-                                                
                                             </ListItemIcon>
+                                            <img src={tfSvg} alt="TF-logo" style={{ height: 50, width: 55 }}/>
                                             <ListItemText primary="TensorFlow"/>
                                         </ListItem>
                                     </List>
@@ -241,3 +245,13 @@ const Approach = () => {
 }
 
 export default Approach;
+
+/*
+
+reactSvg
+djangoSvg
+muiSvg
+sqlSvg
+tfSvg
+
+*/
