@@ -17,15 +17,9 @@ const ListItem = styled('li')(({ theme }) => ({
 
 const Results = () => {
 
-    const result = useRecoilValue(results)
+    const result = useRecoilValue(results);
 
-    const chipData = [
-        { key: 0, label: 'Angular' },
-        { key: 1, label: 'jQuery' },
-        { key: 2, label: 'Polymer' },
-        { key: 3, label: 'React' },
-        { key: 4, label: 'Vue.js' },
-    ]
+    const chipData = result.keywords;
 
 
     const [value, setValue] = React.useState('1');
@@ -53,7 +47,7 @@ const Results = () => {
 
             <Paper style={{ backgroundColor: "#e3f2fd" }}>
                 <Box pt={2} pb={2} sx={{ textAlign: "center" }}>
-                    <Box><Typography variant="h6" color="primary">Keywords</Typography></Box>
+                    <Box><Typography variant="h6" color="primary">Keywords &amp; Important Phrases</Typography></Box>
                     <Paper
                         elevation={0}
                         sx={{
@@ -69,11 +63,11 @@ const Results = () => {
 
                     >
 
-                        {chipData.map((data) => {
+                        {chipData.map((data, index) => {
 
                             return (
-                                <ListItem key={data.key}>
-                                    <Chip label={data.label} color="primary" variant="outlined" />
+                                <ListItem key={index}>
+                                    <Chip label={data} color="primary" />
                                 </ListItem>
                             );
                         })}
