@@ -15,12 +15,15 @@ import ListItem from '@mui/material/ListItem';
 import ListItemIcon from '@mui/material/ListItemIcon';
 import ListItemText from '@mui/material/ListItemText';
 import ArrowRightIcon from '@mui/icons-material/ArrowRight';
+
+
+
 const Approach = () => {
     return (
         <>
             <Container>
                 <Box sx={{ textAlign: "left" }}>
-                    <Box mt={6} mb={4} pt={3} pb={3} pl={4} pr={4} style={{ backgroundColor: "#e3f2fd", borderRadius: "20px" }}>
+                    <Box mt={5} mb={4} pt={3} pb={3} pl={4} pr={4} style={{ backgroundColor: "#e3f2fd", borderRadius: "20px" }}>
                         <Box justifyContent="flex-start" mb={2}>
                             <Box sx={{ fontSize: 'h4.fontSize', fontWeight: 'regular' }}>
                                 Multilingual Text Analyzer and Summarization Engine
@@ -47,35 +50,35 @@ const Approach = () => {
                                     <ListItemIcon>
                                         <ArrowRightIcon />
                                     </ListItemIcon>
-                                    <ListItemText primary="Keyword Extraction" secondary="Extract the most important keywords that define the text provided" />
+                                    <ListItemText primary="Keyword Extraction" secondary="Extracts the most important keywords that define the text provided" />
                                 </ListItem>
                                 <ListItem disablePadding>
                                     <ListItemIcon>
                                         <ArrowRightIcon />
                                     </ListItemIcon>
-                                    <ListItemText primary="Abstractive Text Summarization (To get the Headline/Title)" secondary="Give a 1-2 liner defining the meaning of the text provided" />
+                                    <ListItemText primary="Abstractive Text Summarization (To get the Headline/Title)" secondary="Gives a 1-2 liner defining the meaning of the text provided" />
                                 </ListItem>
                                 <ListItem disablePadding>
                                     <ListItemIcon>
                                         <ArrowRightIcon />
                                     </ListItemIcon>
-                                    <ListItemText primary="Extractive Text Summarization" secondary="Give a short summary of the text provided" />
+                                    <ListItemText primary="Extractive Text Summarization" secondary="Gives a short summary of the text provided" />
                                 </ListItem>
                             </List>
                         </Box>
-                        <Box mt={2} >
+                        <Box mt={6} >
                             <Box>
                                 <Typography variant='h5'>
                                     Model Diagram depicting text processing
                                 </Typography>
                             </Box>
-                            <Box pt={2} >
-                                <img src={modelDiagram} alt="banner" style={{ height: '50%', width: '100%'}} />
+                            <Box pt={2} sx={{ textAlign: 'center' }}>
+                                <img src={modelDiagram} alt="banner" style={{ height: '50%', maxWidth: '900px', width: '100%' }} />
                             </Box>
                         </Box>
-                        <Box mt={2}>
+                        <Box mt={8}>
                             <Box>
-                                <Typography variant='h5'>
+                                <Typography variant='h5' gutterBottom>
                                     Text Summarization
                                 </Typography>
                                 <Typography variant='body1'>
@@ -91,27 +94,27 @@ const Approach = () => {
                                 </Typography>
                             </Box>
                             <Box mt={3}>
-                                <Typography variant='body1'>
-                                    Methods used:
+                                <Typography variant='h7'>
+                                    METHODS USED:
                                 </Typography>
                                 <List>
                                     <ListItem disablePadding>
                                         <ListItemIcon>
                                             <ArrowRightIcon />
                                         </ListItemIcon>
-                                        <ListItemText primary="Text Rank: In Text Rank, sentence term matrix is used to cosine similarity between sentences. The similarity matrix is used to construct a graph, where sentences are nodes. Text rank algorithm is run on the graph. This method is similar to Page Rank algorithm used for ranking web pages in online search results" />
+                                        <ListItemText primary={<><strong>Text Rank:</strong> In Text Rank, sentence term matrix is used to cosine similarity between sentences. The similarity matrix is used to construct a graph, where sentences are nodes. Text rank algorithm is run on the graph. This method is similar to Page Rank algorithm used for ranking web pages in online search results</>} />
                                     </ListItem>
                                     <ListItem disablePadding>
                                         <ListItemIcon>
                                             <ArrowRightIcon />
                                         </ListItemIcon>
-                                        <ListItemText primary="Term Frequency: In Term Frequency, frequencies of terms appearing in a sentence are added up to calculate score. A regularization is done based on sentence length." />
+                                        <ListItemText primary={<><strong>Term Frequency:</strong> In Term Frequency, frequencies of terms appearing in a sentence are added up to calculate score. A regularization is done based on sentence length.</>} />
                                     </ListItem>
                                 </List>
                             </Box>
                             <Box mt={3}>
                                 <Typography variant='body1'>
-                                    Approach:
+                                    APPROACH:
                                 </Typography>
                                 <List>
                                     <ListItem disablePadding>
@@ -155,25 +158,25 @@ const Approach = () => {
                                 </Typography>
                             </Box>
                             <Box mt={3}>
-                                <Typography variant='body1'>
-                                    Methods used:
+                                <Typography variant='h7'>
+                                    METHODS USED:
                                 </Typography>
                                 <List>
                                     <ListItem disablePadding>
                                         <ListItemIcon>
                                             <ArrowRightIcon />
                                         </ListItemIcon>
-                                        <ListItemText primary="seq2seq (with attention mechanism): Sequence to Sequence architecture can be used for any problems involving sequential information (like Sentiment classification, Neural Machine Translation, and Named Entity Recognition). For text summarization we will model a many-to-many seq2seq problem. It mainly consists of encoder - decoder architecture, where input is a long sequence of words and the output will be a short version of the input sequence. The basic idea of the attention mechanism used with it is how much attention do we need to pay to every word in the input sequence for generating a word at timestep." />
+                                        <ListItemText primary={<><strong>seq2seq (with attention mechanism):</strong> Sequence to Sequence architecture can be used for any problems involving sequential information (like Sentiment classification, Neural Machine Translation, and Named Entity Recognition). For text summarization we will model a many-to-many seq2seq problem. It mainly consists of encoder - decoder architecture, where input is a long sequence of words and the output will be a short version of the input sequence. The basic idea of the attention mechanism used with it is how much attention do we need to pay to every word in the input sequence for generating a word at timestep.</>} />
                                     </ListItem>
                                     <ListItem disablePadding>
                                         <ListItemIcon>
                                             <ArrowRightIcon />
                                         </ListItemIcon>
-                                        <ListItemText primary="Pointer Gen Model: The pointer-generator network is the extension of the above model, as it allows both copying words via pointing, and generating words from a fixed vocabulary. For each decoder timestep, a generation probability is calculated, which weights the probability of generating words from the vocabulary, versus copying words from the source text. The vocabulary distribution and the attention distribution are weighted and summed to obtain the final distribution, from which we make our prediction." />
+                                        <ListItemText primary={<><strong>Pointer Gen Model:</strong> The pointer-generator network is the extension of the above model, as it allows both copying words via pointing, and generating words from a fixed vocabulary. For each decoder timestep, a generation probability is calculated, which weights the probability of generating words from the vocabulary, versus copying words from the source text. The vocabulary distribution and the attention distribution are weighted and summed to obtain the final distribution, from which we make our prediction.</>} />
                                     </ListItem>
                                 </List>
                             </Box>
-                            <Box mt={4}>
+                            <Box mt={6}>
                                 <Typography variant='h5'>
                                     Technologies Used:
                                 </Typography>
@@ -188,7 +191,7 @@ const Approach = () => {
                                             <ListItemIcon>
                                                 <ArrowRightIcon />
                                             </ListItemIcon>
-                                            <img src={reactSvg} alt="react-logo" style={{ height: 55, width: 55 }}/> &nbsp;
+                                            <img src={reactSvg} alt="react-logo" style={{ height: 55, width: 55 }} /> &nbsp;
                                             <ListItemText primary="React" />
                                         </ListItem>
                                         <ListItem disablePadding>
@@ -209,14 +212,14 @@ const Approach = () => {
                                             <ListItemIcon>
                                                 <ArrowRightIcon />
                                             </ListItemIcon>
-                                            <img src={djangoSvg} alt="Django-logo" style={{ height: 50, width: 55 }}/>
+                                            <img src={djangoSvg} alt="Django-logo" style={{ height: 50, width: 55 }} />
                                             <ListItemText primary="Django REST Framework" />
                                         </ListItem>
                                         <ListItem disablePadding>
                                             <ListItemIcon>
                                                 <ArrowRightIcon />
                                             </ListItemIcon>
-                                            <img src={sqlSvg} alt="SQL-logo" style={{ height: 50, width: 55 }}/>
+                                            <img src={sqlSvg} alt="SQL-logo" style={{ height: 50, width: 55 }} />
                                             <ListItemText primary="SQL" />
                                         </ListItem>
                                     </List>
@@ -230,8 +233,8 @@ const Approach = () => {
                                             <ListItemIcon>
                                                 <ArrowRightIcon />
                                             </ListItemIcon>
-                                            <img src={tfSvg} alt="TF-logo" style={{ height: 50, width: 55 }}/>
-                                            <ListItemText primary="TensorFlow"/>
+                                            <img src={tfSvg} alt="TF-logo" style={{ height: 50, width: 55 }} />
+                                            <ListItemText primary="TensorFlow" />
                                         </ListItem>
                                     </List>
                                 </Box>
