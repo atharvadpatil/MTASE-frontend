@@ -79,7 +79,7 @@ const Results = () => {
                 {result.text.translated_text ?
                     <Box mr={2} pt={3} pb={3} sx={{ textAlign: "center" }} style={{ width: "50%" }} >
                         <Paper style={{ backgroundColor: "#e3f2fd", maxHeight: 300, overflow: "auto" }}>
-                            <Typography pt={1} variant="h6" color="primary">Original Text</Typography>
+                            <Typography pt={1} variant="h6" color="primary">Original Text ({result.original_lang})</Typography>
                             <Typography px={2} py={2} sx={{ textAlign: "left" }}>
                                 {result.text.text}
                             </Typography>
@@ -88,7 +88,7 @@ const Results = () => {
                     :
                     <Box pt={3} pb={3} sx={{ textAlign: "center" }} style={{ width: "100%" }} >
                         <Paper style={{ backgroundColor: "#e3f2fd", maxHeight: 300, overflow: "auto" }}>
-                            <Typography pt={1} variant="h6" color="primary">Original Text</Typography>
+                            <Typography pt={1} variant="h6" color="primary">Original Text ({result.original_lang})</Typography>
                             <Typography px={2} py={2} sx={{ textAlign: "left" }}>
                                 {result.text.text}
                             </Typography>
