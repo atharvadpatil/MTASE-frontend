@@ -7,6 +7,7 @@ import djangoSvg from '../images/django.svg';
 import muiSvg from '../images/material-ui.svg';
 import sqlSvg from '../images/sql.svg';
 import tfSvg from '../images/tensorflow.svg';
+import pytorch from '../images/pytorch.svg';
 
 // MUI
 import { Box, Container, Typography } from "@mui/material";
@@ -191,7 +192,7 @@ const Approach = () => {
                                             <ListItemIcon>
                                                 <ArrowRightIcon />
                                             </ListItemIcon>
-                                            <img src={reactSvg} alt="react-logo" style={{ height: 55, width: 55 }} /> &nbsp;
+                                            <img src={reactSvg} alt="react-logo" style={{ height: 50, width: 55 }} /> &nbsp;
                                             <ListItemText primary="React" />
                                         </ListItem>
                                         <ListItem disablePadding>
@@ -235,6 +236,14 @@ const Approach = () => {
                                             </ListItemIcon>
                                             <img src={tfSvg} alt="TF-logo" style={{ height: 50, width: 55 }} />
                                             <ListItemText primary="TensorFlow" />
+                                        </ListItem>
+                                        {" "}
+                                        <ListItem disablePadding>
+                                            <ListItemIcon>
+                                                <ArrowRightIcon />
+                                            </ListItemIcon>
+                                            <img src={pytorch} alt="pytorch" style={{ height: 50, width: 55 }} />
+                                            <ListItemText primary="PyTorch" />
                                         </ListItem>
                                     </List>
                                 </Box>
