@@ -127,11 +127,11 @@ const Results = () => {
                 </Paper>
             </Box>
 
-            <Box>
+            {/* <Box>
                 <pre>{JSON.stringify(result.len, null, 4)}</pre>
                 <br />
                 {JSON.stringify(result.text)}
-            </Box>
+            </Box> */}
         </Container >
     );
 }
