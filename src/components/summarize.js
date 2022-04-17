@@ -159,13 +159,13 @@ const Summarize = () => {
                 aria-describedby="modal-modal-description"
             >
                 <Box sx={style}>
-                    <Typography sx={{textAlign: "center" }}>The input text has been translated from <b>Hindi</b> to <b>English</b>.</Typography>
-                    {/* <Box sx={{ display: "flex", flexDirection: "row" }}>
+                    <Typography sx={{textAlign: "center" }}>The input text has been translated from <b>{result?.original_lang}</b> to <b>English</b>.</Typography>
+                    <Box sx={{ display: "flex", flexDirection: "row" }}>
                         <Box mr={2} pt={3} pb={3} sx={{ textAlign: "center" }} style={{ width: "50%" }} >
                             <Paper style={{ backgroundColor: "#e3f2fd", maxHeight: 500, overflow: "auto" }}>
-                                <Typography pt={1} variant="h6" color="primary">Original Text ({result.origial_lang})</Typography>
+                                <Typography pt={1} variant="h6" color="primary">Original Text ({result?.original_lang})</Typography>
                                 <Typography px={2} py={2} sx={{ textAlign: "left" }}>
-                                    {result.text.text}
+                                    {result?.text?.text}
                                 </Typography>
                             </Paper>
                         </Box>
@@ -173,11 +173,11 @@ const Summarize = () => {
                             <Paper style={{ backgroundColor: "#e3f2fd", maxHeight: 500, overflow: "auto" }}>
                                 <Typography pt={1} variant="h6" color="primary">Translated Text (English)</Typography>
                                 <Typography px={2} py={2} sx={{ textAlign: "left" }}>
-                                    {result.translated_text}
+                                    {result?.text?.translated_text}
                                 </Typography>
                             </Paper>
                         </Box>
-                    </Box> */}
+                    </Box>
                     <Box mt={3}>
                         <Button
                             variant="contained"
