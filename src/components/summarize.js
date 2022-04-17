@@ -4,13 +4,16 @@ import FileUpload from "react-material-file-upload";
 import { useNavigate } from 'react-router-dom';
 import { results } from '../atoms';
 import { useSetRecoilState } from 'recoil';
+import { useRecoilValue } from 'recoil';
 
 //MUI
 import Box from '@mui/material/Box';
-import { Grid, TextField, Typography } from '@mui/material';
+import { Grid, TextField, Typography, Paper } from '@mui/material';
 import LoadingButton from '@mui/lab/LoadingButton';
+import Button from '@mui/material/Button';
 import { lightBlue } from '@mui/material/colors';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
+import Modal from '@mui/material/Modal';
 
 const theme = createTheme({
     palette: {
@@ -20,7 +23,21 @@ const theme = createTheme({
     },
 });
 
+const style = {
+    position: 'absolute',
+    top: '50%',
+    left: '50%',
+    transform: 'translate(-50%, -50%)',
+    width: 1000,
+    bgcolor: 'background.paper',
+    border: '2px solid #000',
+    boxShadow: 24,
+    p: 4,
+};
+
 const Summarize = () => {
+
+    const result = useRecoilValue(results);
 
     const navigate = useNavigate();
 
@@ -32,6 +49,10 @@ const Summarize = () => {
 
     const [loading, setLoading] = useState(false)
     const setResult = useSetRecoilState(results)
+
+    const [open, setOpen] = React.useState(false);
+    const handleOpen = () => setOpen(true);
+    const handleClose = () => setOpen(false);
 
 
     const handleSubmit = e => {
@@ -63,7 +84,10 @@ const Summarize = () => {
                     setLoading(false);
                     console.log(res);
                     setResult(res.data);
-                    navigate("/results");
+                    if (res.data.text.translated_text)
+                        handleOpen();
+                    else
+                        navigate("/results");
                     // alert(res.data.text);
                     // window.location.reload();
                 })
@@ -73,9 +97,11 @@ const Summarize = () => {
                     alert("An error occured! Please try again.")
                 });
         }
-
     }
 
+    const goToResults = () => {
+        navigate("/results");
+    }
 
     return (
         <>
@@ -116,9 +142,9 @@ const Summarize = () => {
                             loading={loading}
                             loadingIndicator="Processing..."
                             variant="contained"
-                            type="submit" 
-                            onClick={handleSubmit} 
-                            color="primary" 
+                            type="submit"
+                            onClick={handleSubmit}
+                            color="primary"
                             sx={{ width: '100%' }}
                         >
                             Submit
@@ -126,6 +152,45 @@ const Summarize = () => {
                     </Box>
                 </Grid>
             </Grid>
+            <Modal
+                open={open}
+                onClose={handleClose}
+                aria-labelledby="modal-modal-title"
+                aria-describedby="modal-modal-description"
+            >
+                <Box sx={style}>
+                    <Typography sx={{textAlign: "center" }}>The input text has been translated from <b>Hindi</b> to <b>English</b>.</Typography>
+                    {/* <Box sx={{ display: "flex", flexDirection: "row" }}>
+                        <Box mr={2} pt={3} pb={3} sx={{ textAlign: "center" }} style={{ width: "50%" }} >
+                            <Paper style={{ backgroundColor: "#e3f2fd", maxHeight: 500, overflow: "auto" }}>
+                                <Typography pt={1} variant="h6" color="primary">Original Text ({result.origial_lang})</Typography>
+                                <Typography px={2} py={2} sx={{ textAlign: "left" }}>
+                                    {result.text.text}
+                                </Typography>
+                            </Paper>
+                        </Box>
+                        <Box ml={2} pt={3} pb={3} sx={{ textAlign: "center" }} style={{ width: "50%" }}>
+                            <Paper style={{ backgroundColor: "#e3f2fd", maxHeight: 500, overflow: "auto" }}>
+                                <Typography pt={1} variant="h6" color="primary">Translated Text (English)</Typography>
+                                <Typography px={2} py={2} sx={{ textAlign: "left" }}>
+                                    {result.translated_text}
+                                </Typography>
+                            </Paper>
+                        </Box>
+                    </Box> */}
+                    <Box mt={3}>
+                        <Button
+                            variant="contained"
+                            type="submit"
+                            onClick={goToResults}
+                            color="primary"
+                            sx={{ width: '100%' }}
+                        >
+                            View Full Summary
+                        </Button>
+                    </Box>
+                </Box>
+            </Modal>
         </>
     );
 }
