@@ -3,7 +3,7 @@ import { results } from '../atoms';
 import { useRecoilValue } from 'recoil';
 
 //MUI
-import { Box, Container, Paper, Typography, Chip } from '@mui/material';
+import { Box, Container, Paper, Typography, Chip, Grid } from '@mui/material';
 import Tab from '@mui/material/Tab';
 import TabContext from '@mui/lab/TabContext';
 import TabList from '@mui/lab/TabList';
@@ -76,35 +76,43 @@ const Results = () => {
             </Paper>
 
             <Box sx={{ display: "flex", flexDirection: "row" }}>
-                {result.text.translated_text ?
-                    <Box mr={2} pt={3} pb={3} sx={{ textAlign: "center" }} style={{ width: "50%" }} >
-                        <Paper style={{ backgroundColor: "#e3f2fd", maxHeight: 300, overflow: "auto" }}>
-                            <Typography pt={1} variant="h6" color="primary">Original Text ({result.original_lang})</Typography>
-                            <Typography px={2} py={2} sx={{ textAlign: "left" }}>
-                                {result.text.text}
-                            </Typography>
-                        </Paper>
-                    </Box>
-                    :
-                    <Box pt={3} pb={3} sx={{ textAlign: "center" }} style={{ width: "100%" }} >
-                        <Paper style={{ backgroundColor: "#e3f2fd", maxHeight: 300, overflow: "auto" }}>
-                            <Typography pt={1} variant="h6" color="primary">Original Text ({result.original_lang})</Typography>
-                            <Typography px={2} py={2} sx={{ textAlign: "left" }}>
-                                {result.text.text}
-                            </Typography>
-                        </Paper>
-                    </Box>}
-
-                {result.text.translated_text ?
-                    <Box ml={2} pt={3} pb={3} sx={{ textAlign: "center" }} style={{ width: "50%" }}>
-                        <Paper style={{ backgroundColor: "#e3f2fd", maxHeight: 300, overflow: "auto" }}>
-                            <Typography pt={1} variant="h6" color="primary">Translated Text</Typography>
-                            <Typography px={2} py={2} sx={{ textAlign: "left" }}>
-                                {result.text.translated_text}
-                            </Typography>
-                        </Paper>
-                    </Box>
-                    : null}
+                <Grid container spacing={4}>
+                    {result.text.translated_text ?
+                        <Grid item xs={12} sm={12} md={6}>
+                            <Box pt={3} pb={3} sx={{ textAlign: "center" }} >
+                                <Paper style={{ backgroundColor: "#e3f2fd", maxHeight: 300, overflow: "auto" }}>
+                                    <Typography pt={1} variant="h6" color="primary">Original Text ({result.original_lang})</Typography>
+                                    <Typography px={2} py={2} sx={{ textAlign: "left" }}>
+                                        {result.text.text}
+                                    </Typography>
+                                </Paper>
+                            </Box>
+                        </Grid>
+                        :
+                        <Grid item xs={12} sm={12} md={12}>
+                            <Box pt={3} pb={3} sx={{ textAlign: "center" }} >
+                                <Paper style={{ backgroundColor: "#e3f2fd", maxHeight: 300, overflow: "auto" }}>
+                                    <Typography pt={1} variant="h6" color="primary">Original Text ({result.original_lang})</Typography>
+                                    <Typography px={2} py={2} sx={{ textAlign: "left" }}>
+                                        {result.text.text}
+                                    </Typography>
+                                </Paper>
+                            </Box>
+                        </Grid>
+                    }
+                    {result.text.translated_text ?
+                        <Grid item xs={12} sm={12} md={6}>
+                            <Box pt={3} pb={3} sx={{ textAlign: "center" }} >
+                                <Paper style={{ backgroundColor: "#e3f2fd", maxHeight: 300, overflow: "auto" }}>
+                                    <Typography pt={1} variant="h6" color="primary">Translated Text</Typography>
+                                    <Typography px={2} py={2} sx={{ textAlign: "left" }}>
+                                        {result.text.translated_text}
+                                    </Typography>
+                                </Paper>
+                            </Box>
+                        </Grid>
+                        : null}
+                </Grid>
             </Box>
 
             <Box pt={3} pb={3} sx={{ textAlign: "center" }}>

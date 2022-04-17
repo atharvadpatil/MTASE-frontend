@@ -28,9 +28,8 @@ const style = {
     top: '50%',
     left: '50%',
     transform: 'translate(-50%, -50%)',
-    width: 1000,
+    width: '70%',
     bgcolor: 'background.paper',
-    border: '2px solid #000',
     boxShadow: 24,
     p: 4,
 };
@@ -159,24 +158,30 @@ const Summarize = () => {
                 aria-describedby="modal-modal-description"
             >
                 <Box sx={style}>
-                    <Typography sx={{textAlign: "center" }}>The input text has been translated from <b>{result?.original_lang}</b> to <b>English</b>.</Typography>
+                    <Typography sx={{ textAlign: "center" }}>The input text has been translated from <b>{result?.original_lang}</b> to <b>English</b>.</Typography>
                     <Box sx={{ display: "flex", flexDirection: "row" }}>
-                        <Box mr={2} pt={3} pb={3} sx={{ textAlign: "center" }} style={{ width: "50%" }} >
-                            <Paper style={{ backgroundColor: "#e3f2fd", maxHeight: 500, overflow: "auto" }}>
-                                <Typography pt={1} variant="h6" color="primary">Original Text ({result?.original_lang})</Typography>
-                                <Typography px={2} py={2} sx={{ textAlign: "left" }}>
-                                    {result?.text?.text}
-                                </Typography>
-                            </Paper>
-                        </Box>
-                        <Box ml={2} pt={3} pb={3} sx={{ textAlign: "center" }} style={{ width: "50%" }}>
-                            <Paper style={{ backgroundColor: "#e3f2fd", maxHeight: 500, overflow: "auto" }}>
-                                <Typography pt={1} variant="h6" color="primary">Translated Text (English)</Typography>
-                                <Typography px={2} py={2} sx={{ textAlign: "left" }}>
-                                    {result?.text?.translated_text}
-                                </Typography>
-                            </Paper>
-                        </Box>
+                        <Grid container spacing={3}>
+                            <Grid item xs={12} sm={12} md={6}>
+                                <Box pt={3} pb={3} sx={{ textAlign: "center" }} style={{ width: "100%" }} >
+                                    <Paper style={{ backgroundColor: "#e3f2fd", maxHeight: '80%', overflow: "auto" }}>
+                                        <Typography pt={1} variant="h6" color="primary">Original Text ({result?.original_lang})</Typography>
+                                        <Typography px={2} py={2} sx={{ textAlign: "left" }}>
+                                            {result?.text?.text}
+                                        </Typography>
+                                    </Paper>
+                                </Box>
+                            </Grid>
+                            <Grid item xs={12} sm={12} md={6}>
+                                <Box pt={3} pb={3} sx={{ textAlign: "center" }} style={{ width: "100%" }}>
+                                    <Paper style={{ backgroundColor: "#e3f2fd", maxHeight: '80%', overflow: "auto" }}>
+                                        <Typography pt={1} variant="h6" color="primary">Translated Text (English)</Typography>
+                                        <Typography px={2} py={2} sx={{ textAlign: "left" }}>
+                                            {result?.text?.translated_text}
+                                        </Typography>
+                                    </Paper>
+                                </Box>
+                            </Grid>
+                        </Grid>
                     </Box>
                     <Box mt={3}>
                         <Button
@@ -190,7 +195,7 @@ const Summarize = () => {
                         </Button>
                     </Box>
                 </Box>
-            </Modal>
+            </Modal >
         </>
     );
 }
