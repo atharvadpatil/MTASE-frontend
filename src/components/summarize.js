@@ -13,7 +13,8 @@ import LoadingButton from '@mui/lab/LoadingButton';
 import Button from '@mui/material/Button';
 import { lightBlue } from '@mui/material/colors';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
-import Modal from '@mui/material/Modal';
+import useMediaQuery from '@mui/material/useMediaQuery';
+import Dialog from '@mui/material/Dialog';
 
 const theme = createTheme({
     palette: {
@@ -22,17 +23,6 @@ const theme = createTheme({
         },
     },
 });
-
-const style = {
-    position: 'absolute',
-    top: '50%',
-    left: '50%',
-    transform: 'translate(-50%, -50%)',
-    width: '70%',
-    bgcolor: 'background.paper',
-    boxShadow: 24,
-    p: 4,
-};
 
 const Summarize = () => {
 
@@ -49,7 +39,8 @@ const Summarize = () => {
     const [loading, setLoading] = useState(false)
     const setResult = useSetRecoilState(results)
 
-    const [open, setOpen] = React.useState(false);
+    const [open, setOpen] = useState(false);
+    const fullScreen = useMediaQuery(theme.breakpoints.down('md'));
     const handleOpen = () => setOpen(true);
     const handleClose = () => setOpen(false);
 
@@ -151,17 +142,17 @@ const Summarize = () => {
                     </Box>
                 </Grid>
             </Grid>
-            <Modal
+            <Dialog
+                fullScreen={fullScreen}
                 open={open}
                 onClose={handleClose}
-                aria-labelledby="modal-modal-title"
-                aria-describedby="modal-modal-description"
+                aria-labelledby="responsive-dialog-title"
             >
-                <Box sx={style}>
+                <Box m={2}>
                     <Typography sx={{ textAlign: "center" }}>The input text has been translated from <b>{result?.original_lang}</b> to <b>English</b>.</Typography>
                     <Box sx={{ display: "flex", flexDirection: "row" }}>
                         <Grid container spacing={3}>
-                            <Grid item xs={12} sm={12} md={6}>
+                            <Grid item xs={12} md={6}>
                                 <Box pt={3} pb={3} sx={{ textAlign: "center" }} style={{ width: "100%" }} >
                                     <Paper style={{ backgroundColor: "#e3f2fd", maxHeight: '80%', overflow: "auto" }}>
                                         <Typography pt={1} variant="h6" color="primary">Original Text ({result?.original_lang})</Typography>
@@ -171,7 +162,7 @@ const Summarize = () => {
                                     </Paper>
                                 </Box>
                             </Grid>
-                            <Grid item xs={12} sm={12} md={6}>
+                            <Grid item xs={12} md={6}>
                                 <Box pt={3} pb={3} sx={{ textAlign: "center" }} style={{ width: "100%" }}>
                                     <Paper style={{ backgroundColor: "#e3f2fd", maxHeight: '80%', overflow: "auto" }}>
                                         <Typography pt={1} variant="h6" color="primary">Translated Text (English)</Typography>
@@ -195,7 +186,8 @@ const Summarize = () => {
                         </Button>
                     </Box>
                 </Box>
-            </Modal >
+            </Dialog>
+
         </>
     );
 }
