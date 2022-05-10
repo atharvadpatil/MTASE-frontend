@@ -23,9 +23,14 @@ const Results = () => {
 
 
     const [value, setValue] = React.useState('1');
+    const [value2, setValue2] = React.useState('2');
 
     const handleChange = (event, newValue) => {
         setValue(newValue);
+    };
+
+    const handleChange2 = (event, newValue) => {
+        setValue2(newValue);
     };
 
     return (
@@ -44,6 +49,23 @@ const Results = () => {
                     </TabContext>
                 </Paper>
             </Box>
+
+            {result.text.translated_text ?
+                <Box pt={3} pb={3} sx={{ width: '100%', typography: 'body1' }}>
+                    <Paper style={{ backgroundColor: "#e3f2fd" }}>
+                        <TabContext value={value2}>
+                            <Box sx={{ borderBottom: 1, borderColor: 'divider' }}>
+                                <TabList onChange={handleChange2} aria-label="lab API tabs example">
+                                    <Tab label={'One Line Summary (' + result?.original_lang + ')'} value="1" />
+                                    <Tab label={'Detailed Summary (' + result?.original_lang + ')'} value="2" />
+                                </TabList>
+                            </Box>
+                            <TabPanel value="1">{result.text.abs_reverse_translation}</TabPanel>
+                            <TabPanel value="2">{result.text.ext_reverse_translation}</TabPanel>
+                        </TabContext>
+                    </Paper>
+                </Box>
+                : null}
 
             <Paper style={{ backgroundColor: "#e3f2fd" }}>
                 <Box pt={2} pb={2} sx={{ textAlign: "center" }}>
