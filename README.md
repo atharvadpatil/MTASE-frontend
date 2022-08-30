@@ -1,4 +1,4 @@
-# MTASE (Multilingual Text Analyzer and Summarization Engine) Backend
+# MTASE (Multilingual Text Analyzer and Summarization Engine) Frontend
 
 The objective of this project is to build a Multilingual Text Analyzer and Summarization Engine that can analyze, translate and summarize a piece of unlabeled/unidentified/unknown text provided by the user as input and make its services available via a web application.
 
@@ -6,7 +6,7 @@ _This project serves as frontend for [MTASE backend](https://github.com/VirajPat
 
 
 ### Features ###
-| Functionality | Description
+| Functionality | Descriptiona
 | :---         | :--- 
 | User Friendly UI | Application UI is asy to use and navigate |
 | Responsive Design | UI configured to be accessible accross desktops, tablets and mobile phones  |
@@ -22,3 +22,4 @@ _This project serves as frontend for [MTASE backend](https://github.com/VirajPat
 * React v17.0.2
 * Recoil v0.6.1
 * Axios v0.24.0
+* MaterialUI v5.4.2
