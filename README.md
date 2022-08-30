@@ -6,7 +6,7 @@ _This project serves as frontend for [MTASE backend](https://github.com/VirajPat
 
 
 ### Features ###
-| Functionality | Description |a
+| Functionality | Description
 | :---         | :--- 
 | User Friendly UI | Application UI is asy to use and navigate |
 | Responsive Design | UI configured to be accessible accross desktops, tablets and mobile phones  |
