@@ -23,3 +23,25 @@ _This project serves as frontend for [MTASE backend](https://github.com/VirajPat
 * Recoil v0.6.1
 * Axios v0.24.0
 * MaterialUI v5.4.2
+
+
+### UI Screenshots ###
+
+#### Home Screen ####
+<img src="https://github.com/VirajPatidar/MTASE-frontend/blob/main/screenshots/homescreen.png" alt="Homescreen" width="600"/>
+<img src="https://github.com/VirajPatidar/MTASE-frontend/blob/main/screenshots/approach_page.png" alt="Approach Page" width="600"/>
+
+#### Input ####
+
+<img src="https://github.com/VirajPatidar/MTASE-frontend/blob/main/screenshots/test_input1.png" alt="Test Input 1" width="600"/>
+<img src="https://github.com/VirajPatidar/MTASE-frontend/blob/main/screenshots/test_input2.png" alt="Test Input 2" width="600"/>
+
+#### Output ####
+
+<img src="https://github.com/VirajPatidar/MTASE-frontend/blob/main/screenshots/test_output1.png" alt="Test Output 1" width="600"/>
+<img src="https://github.com/VirajPatidar/MTASE-frontend/blob/main/screenshots/test_output2a.png" alt="Test Output 2a" width="600"/>
+<img src="https://github.com/VirajPatidar/MTASE-frontend/blob/main/screenshots/test_output2b.png" alt="Test Output 2b" width="600"/>
+
+#### Mobile Friendly Design ####
+
+<img src="https://github.com/VirajPatidar/MTASE-frontend/blob/main/screenshots/mobile_friendly.png" alt="Mobile Friendly Design" width="600"/>
