@@ -4,7 +4,7 @@
 
 The objective of this project is to build a Multilingual Text Analyzer and Summarization Engine that can analyze, translate and summarize a piece of unlabeled/unidentified/unknown text provided by the user as input and make its services available via a web application.
 
-_This project serves as frontend for [MTASE backend](https://github.com/VirajPatidar/MTASE-backend)._
+_This project serves as frontend for [MTASE backend](https://github.com/atharvadpatil/MTASE-backend)._
 
 
 <br>
